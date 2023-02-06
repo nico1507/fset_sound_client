@@ -1,0 +1,410 @@
+/* General Page Style */
+body {
+    background-color: #550000;
+    margin: 0px;
+    min-height: 450px;
+}
+
+#header {
+    background-color: #450000;
+    width: 100vw;
+    height: calc(min(8vh, 3em));
+    min-height: 36px;
+
+    padding: 0;
+    text-align: center;
+    display: flex;
+    position: relative;
+    animation: fadeStartup 3s;
+}
+
+#header_img {
+    height: 60%*8vh;
+    max-width: 55%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#menu_icon {
+    height: calc(min(60%, 2em));
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* Startup animation */
+
+@keyframes fadeStartup {
+    0% { height: 100vh; }
+    30% { height: 100vh; }
+    80% { height: calc(min(8vh, 3em)); }
+    100% { height: calc(min(8vh, 3em)); }
+}
+
+@keyframes fadeStartupMenu {
+    0% { opacity: 0%; }
+    30% { opacity: 0%; }
+    80% { opacity: 0%; }
+    100% { opacity: 100% }
+}
+
+
+/* Set aanimation time */
+
+.page {
+    display: none;
+    font-family: Arial, Helcetica, sans-serif;
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-property: opacity;
+    width: 100%;
+    height: 92vh;
+    min-height: 414px;
+    position: relative;
+}
+
+
+/* Login Page */
+
+#login_form {
+    background-color: #450000;
+    font-size: 1em;
+    height: 19.5em;
+    width: 80vw;
+    max-width: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login_form h2 {
+    color: #ffffff;
+    position: absolute;
+    top: -0.5em;
+    left: 5%;
+    transform: translate(0, 0); 
+    font-size: 1.8em;
+}
+
+#login_form label{
+    line-height: 2em;
+}
+
+#login_user {
+    color: #ffffff;
+    position: absolute;
+    top: 4.5em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+}
+
+#login_pw {
+    color: #ffffff;
+    position: absolute;
+    top: 4.5em;
+    left: 50%;
+    transform: translate(-50%, 130%);
+    width: 90%;
+}
+
+#login_user_field {
+    width: 98%;
+    font-size: 1.2em;
+}
+
+#login_pw_field {
+    width: 98%;
+    font-size: 1.2em;
+}
+
+#login_button {
+    transition-duration: 0.1s;
+    -webkit-transition-duration: 0.1s;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    background-color: #350000;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.2em;
+    width: 100%;
+    height: 2.5em;
+}
+
+#login_button:hover {
+    cursor: pointer;
+}
+
+#login_button:hover {
+    background-color: #770000;
+}
+
+#login_button:active {
+    background-color: #350000;
+}
+
+/* Slider Page */
+
+#slider_form {
+    position: absolute;
+    top: 0vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 90vh;
+    min-height: 450px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#slider_form table {
+    /*height: 100%;*/
+    margin-top: calc(max(3.5vh, 15px));
+    margin-bottom: 1vh;
+    padding-bottom: 0px;
+    background-color: #440000;
+}
+
+#slider_form td {
+    padding: 0 calc(clamp(20px, 2vw, 60px));
+}
+
+#slider_form h2 {
+    font-size: 1.4em;
+}
+
+.volume_display {
+    color: #aaaaaa;
+}
+
+.slider_td {
+    overflow: visible;
+    min-height: 200px;
+}
+
+#left_sl_outer_div {
+    overflow: visible;
+    width: 5em;
+    height: calc(90vh - 19em);
+    min-height: 200px;
+    padding: 40px 2vw;
+}
+
+#left_sl_inner_div {
+    position: relative;
+    left: calc(min(-60px,-45vh + 12.0em));
+    background-color: black;
+    padding: 0 0;
+    overflow: visible;
+    transform: rotate(-90deg) translate(-50%, 0);
+    width: calc(90vh - 19em);
+    min-width: 200px;
+}
+
+#right_sl_outer_div {
+    overflow: visible;
+    width: 5em;
+    height: calc(90vh - 19em);
+    min-height: 200px;
+    padding: 40px 2vw;
+}
+
+#right_sl_inner_div {
+    position: relative;
+    left: calc(min(-60px,-45vh + 12.0em));
+    background-color: black;
+    padding: 0 0;
+    overflow: visible;
+    transform: rotate(-90deg) translate(-50%, 0);
+    width: calc(90vh - 19em);
+    min-width: 200px;
+}
+
+
+.mute_button {
+    background-color: #aa0000;
+    color: white;
+    width: 400px;
+    height: 2.5em;
+    border: none;
+}
+
+.mute_button:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+.mute_button:disabled {
+    background-color: #ff0000;
+    cursor: default;
+}
+
+.source_selector {
+    width: 100%;
+    height: 2.5em;
+    margin: 0.7em 0;
+}
+
+.source_selector:hover {
+    cursor: pointer;
+}
+
+.source_selector:disabled {
+    cursor: default;
+}
+
+#slider_form .input-range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0;
+    outline: none;
+    opacity: 1;
+    display: block;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 48px;
+    width: 48px;
+    margin-top: -4px;
+
+    background-image: url('img/FSET_Fader_active.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform: translate(0, -14px) rotate(90deg);
+}
+
+input[type=range]:disabled::-webkit-slider-thumb {
+    background-image: url('img/FSET_Fader_inactive.png');
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #aaaaaa;
+    height: 12px;
+    border: none;
+}
+
+
+input[type='range']::-moz-range-thumb {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    background-image: url('img/FSET_Fader_active.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+input[type='range']:disabled::-moz-range-thumb {
+    background-image: url('img/FSET_Fader_inactive.png');
+    cursor: default;
+}
+
+input[type='range']::-moz-range-track {
+    background-color: #aaaaaa;
+    height: 16px;
+}
+
+#slider_form button {
+    width: 100%;
+    margin: 0;
+}
+
+.locked_display{
+    font-size: 1.2em;
+    margin-bottom: 0.7em;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.slider_filler_td {
+    overflow: visible;
+    background-color: #550000;
+}
+
+
+/* Settings Page */
+
+#settings_form {
+    background-color: #440000;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 600px;
+
+    margin-top: calc(max(3.5vh, 15px));
+    margin-bottom: 1vh;
+    padding: 0 1.5em 1.5em 1.5em;
+}
+
+#settings_form h2 {
+    font-size: 2em;
+    color: white;
+}
+
+#settings_form td {
+    font-size: 1.5em;
+    text-align: left;
+    width: 100%;
+}
+
+#settings_form input.setting_box {
+    transform: scale(1.5);
+    margin: 1em 0.5em;
+    accent-color: red;
+    cursor: pointer;
+}
+
+#user_field {
+    font-size: 0.6em;
+    margin-top: 2em;
+    color: white;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+#settings_form .settings_button {
+    position: absolute;
+    background-color: #330000;
+    color: white;
+    font-size: 1em;
+    width: 50%;
+    height: 2em;
+    margin-top: 0;
+    border: none;
+}
+
+#settings_form .settings_button:hover {
+    background-color: #aa0000;
+    cursor: pointer;
+}
+
+#about_button {
+    left: 0;
+}
+
+#logout_button {
+    right: 0;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>FSET Sound</title>
+        <link rel="stylesheet" type="text/css" href="static/styles.css">
+        <script src="static/functions.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <img id="header_img" src="static/img/Soundswitcher.svg">
+            <img id="menu_icon" src="static/img/Settings.svg" onclick="toggle_settings_view()">
+        </div>
+        <div id="loginpage" class="page">
+            <div id="login_form">
+                <h2>Login</h2>
+                <div id="login_user">
+                    <label for="uname"><b>Benutzername</b></label>
+                    <input id="login_user_field" type="text" placeholder="vorname.nachname" name="uname" required>
+                </div>
+
+                <div id="login_pw">
+                    <label for="psw"><b>Passwort</b></label>
+                    <input id="login_pw_field" type="password" placeholder="FS-ET PC-Passwort" name="psw" required>
+                </div>
+
+                <button id="login_button" type="submit" onclick="press_login()">Login</button>
+            </div>
+        </div>
+        <div id="sliderpage" class="page">
+            <div id="slider_form">
+                <table cellspacing="0">
+                    <tr>
+                        <td><h2>Büro</h2></td>
+                        <td class="slider_filler_td"><div class="slider_filler">&nbsp;</div></td>
+                        <td><h2>Küche</h2></td>
+                    </tr>
+                    <tr>
+                        <td class="volume_display" id="volume_buero"></td>
+                        <td class="slider_filler_td"><div class="slider_filler">&nbsp;</div></td>
+                        <td class="volume_display" id="volume_kueche"></td>
+                    </tr>
+                    <tr id="slider_tr">
+                        <td class="slider_td"><div id="left_sl_outer_div"><div id="left_sl_inner_div"><input class="input-range" type="range" min="-80" max="0" value="-80" type="range" id="buero_slider" onchange="set_volume_buero()" oninput="update_buero_display()"></div></div></td>
+                        <td class="slider_filler_td"><div class="slider_filler">&nbsp;</div></td>
+                        <td class="slider_td"><div id="right_sl_outer_div"><div id="right_sl_inner_div"><input class="input-range" type="range" min="-80" max="0" value="-80" type="range" id="kueche_slider" onchange="set_volume_kueche()" oninput="update_kueche_display()"></div></div></td>
+                    </tr>
+                    <tr id="mute_tr">
+                        <td><button class="mute_button" onclick="toggle_mute_buero()" id="buero_mute">MUTE</button></td>
+                        <td class="slider_filler_td"><div class="slider_filler">&nbsp;</div></td>
+                        <td><button class="mute_button" onclick="toggle_mute_kueche()" id="kueche_mute">MUTE</button></td>
+                    </tr>
+                    <tr>
+                        <td><select class="source_selector" id="buero_source" onchange="set_source_buero()"><option value="1">FSET-Kenny</option><option value="2">FSET-Stan</option><option value="3">FSET-Kyle</option><option value="4">AUX</option></select></td>
+                        <td class="slider_filler_td"><div class="slider_filler">&nbsp;</div></td>
+                        <td><select class="source_selector" id="kueche_source" onchange="set_source_kueche()"><option value="1">FSET-Kenny</option><option value="2">FSET-Stan</option><option value="3">FSET-Kyle</option><option value="4">AUX</option></select></td>
+                    </tr>
+                    <tr>
+                        <td id="locked_buero"><div class="locked_display">-LOCKED-</div></td>
+                        <td class="slider_filler_td"><div class="slider_filler">&nbsp;</div></td>
+                        <td id="locked_kueche"><div class="locked_display">-LOCKED-</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="settingspage" class="page">
+            <div id="settings_form">
+                <table>
+                    <tr>
+                        <h2>Einstellungen</h2>
+                    </tr>
+                    <tr class="admin_setting">
+                        <td><input type="checkbox" class="setting_box" id="lock_buero" onchange="set_lock_buero(this)"> <label for="lock_buero">Lock Büro</label></label></td>
+                    </tr>
+                    <tr class="admin_setting">
+                        <td><input type="checkbox" class="setting_box" id="lock_kueche" onchange="set_lock_kueche(this)"> <label for="lock_kueche">Lock Küche</label></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="setting_box" id="admin_priv" onchange="admin_priv(this)"> <label for="admin_priv">Admin Priviledges</label></label></td>
+                    </tr>
+                    <tr id="user_tr">
+                        <td><p id="user_field"></p></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" class="settings_button" id="about_button" value="About"><input type="button" class="settings_button" id="logout_button" value="Logout" onclick="press_logout()"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script>init();</script>
+    </body>
+</html>
